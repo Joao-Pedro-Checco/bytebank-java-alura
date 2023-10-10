@@ -120,4 +120,19 @@ public class ContaDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public void deletar(Integer numeroConta) {
+        String sql = "delete from conta where numero = ?";
+        PreparedStatement ps;
+
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, numeroConta);
+            ps.execute();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

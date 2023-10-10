@@ -21,10 +21,6 @@ public class Conta {
         return this.saldo.compareTo(BigDecimal.ZERO) != 0;
     }
 
-    public void sacar(BigDecimal valor) {
-        this.saldo = this.saldo.subtract(valor);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
